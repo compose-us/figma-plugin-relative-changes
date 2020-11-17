@@ -1,6 +1,5 @@
 // This plugin changes properties with "mixed" status relatively
 figma.showUI(__html__);
-figma.ui.postMessage({ amountSelected: figma.currentPage.selection.length });
 
 figma.ui.onmessage = (message) => {
   const data = message;

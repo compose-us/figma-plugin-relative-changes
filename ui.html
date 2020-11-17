@@ -3,9 +3,6 @@
   You have to select one or more nodes to change their properties relatively.
   Put in "-5" into "x" to move all nodes 5 pixels to the left.
 </p>
-<div id="status-selected">
-  You have <span id="amount-selected">0</span> nodes selected.
-</div>
 <form id="form">
   <label>X: <input id="x" value="0" /></label>
   <label>Y: <input id="y" value="0" /></label>
@@ -23,13 +20,6 @@
   const $width = document.getElementById("width");
   const $height = document.getElementById("height");
   const $rotation = document.getElementById("rotation");
-
-  onmessage = (event) => {
-    console.log("I got a message from the backend", event);
-    const pluginData = event.data.pluginMessage;
-    const { amountSelected } = pluginData;
-    $amountSelected.innerText = amountSelected;
-  };
 
   $form.onsubmit = submitForm;
 
