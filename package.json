@@ -4,7 +4,8 @@
   "description": "Your Figma Plugin",
   "main": "code.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist/"
   },
   "author": "compose.us GmbH <hello+figma-plugins@compose.us>",
   "license": "MIT",
