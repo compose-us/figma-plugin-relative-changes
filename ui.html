@@ -1,0 +1,54 @@
+<h1>Change selection relatively</h1>
+<p>
+  You have to select one or more nodes to change their properties relatively.
+  Put in "-5" into "x" to move all nodes 5 pixels to the left.
+</p>
+<div id="status-selected">
+  You have <span id="amount-selected">0</span> nodes selected.
+</div>
+<form id="form">
+  <label>X: <input id="x" value="0" /></label>
+  <label>Y: <input id="y" value="0" /></label>
+  <label>Width: <input id="width" value="0" /></label>
+  <label>Height: <input id="height" value="0" /></label>
+  <label>Rotation: <input id="rotation" value="0" /></label>
+  <button>Submit</button>
+</form>
+<script>
+  const $form = document.getElementById("form");
+  const $statusSelected = document.getElementById("status-selected");
+  const $amountSelected = document.getElementById("amount-selected");
+  const $x = document.getElementById("x");
+  const $y = document.getElementById("y");
+  const $width = document.getElementById("width");
+  const $height = document.getElementById("height");
+  const $rotation = document.getElementById("rotation");
+
+  onmessage = (event) => {
+    console.log("I got a message from the backend", event);
+    const pluginData = event.data.pluginMessage;
+    const { amountSelected } = pluginData;
+    $amountSelected.innerText = amountSelected;
+  };
+
+  $form.onsubmit = submitForm;
+
+  function submitForm(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    parent.postMessage(
+      {
+        pluginMessage: {
+          changes: {
+            x: parseFloat($x.value),
+            y: parseFloat($y.value),
+            width: parseFloat($width.value),
+            height: parseFloat($height.value),
+            rotation: parseFloat($rotation.value),
+          },
+        },
+      },
+      "*"
+    );
+  }
+</script>

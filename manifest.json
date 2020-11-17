@@ -1,0 +1,7 @@
+{
+  "name": "Relative changes",
+  "id": "909572090031216315",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "ui.html"
+}
