@@ -4,14 +4,16 @@ figma.showUI(__html__);
 figma.ui.onmessage = (message) => {
   const data = message;
 
-  for (const node of figma.currentPage.selection) {
-    node.x += data.changes.x;
-    node.y += data.changes.y;
-    node.resize(
-      node.width + data.changes.width,
-      node.height + data.changes.height
-    );
-    node.rotation += data.changes.rotation;
-  }
+  processSelection(figma.currentPage.selection, data.changes);
+
   figma.closePlugin();
 };
+
+function processSelection(selection, changes) {
+  for (const node of selection) {
+    node.x += changes.x;
+    node.y += changes.y;
+    node.resize(node.width + changes.width, node.height + changes.height);
+    node.rotation += changes.rotation;
+  }
+}
