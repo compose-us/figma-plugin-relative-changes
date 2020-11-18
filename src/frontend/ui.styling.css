@@ -1,0 +1,64 @@
+body {
+  display: flex;
+  pointer-events: auto;
+  justify-content: center;
+}
+
+.container {
+  max-width: 310px;
+  font-family: "Inter", "Roboto", "Helvetica", "Arial", sans-serif;
+  color: #444444;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  padding-bottom: 10px;
+  line-height: 1.5em;
+}
+
+.container h1 {
+  text-align: center;
+  font-size: 1.85em;
+  margin-bottom: 22px;
+}
+
+.container p {
+  margin: 0 22px 0;
+  font-size: 0.875em; /* 16px is the default em size */
+  line-height: 1.5714285714285714em; /* = 22px/14px */
+}
+
+.container .form {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.container .branding {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 0.75em;
+  color: black;
+  text-decoration: none;
+}
+
+fieldset {
+  border: none;
+  flex-grow: 1;
+  text-align: center;
+}
+
+label,
+input {
+  margin-bottom: 10px;
+}
+
+input[type="number"] {
+  max-width: 52px;
+}
+
+.submition {
+  text-align: center;
+}
+
+label {
+  display: inline-block;
+  padding-right: 10px;
+}

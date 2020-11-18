@@ -1,40 +1,16 @@
-Below are the steps to get your plugin running. You can also find instructions at:
+#figma-plugin-relative-changes
 
-  https://www.figma.com/plugin-docs/setup/
+This plugin you can apply changes to a group of elements (figma nodes) relative to the selection.
 
-This plugin template uses Typescript and NPM, two standard tools in creating JavaScript applications.
+![figma-plugin-relative-changes-hero](assets/figma-plugin-relative-changes-hero.png)
 
-First, download Node.js which comes with NPM. This will allow you to install TypeScript and other
-libraries. You can find the download link here:
+## How to use
 
-  https://nodejs.org/en/download/
+After installing the plugin. Select a group of elements, launch the plugin and change the `rotation`, `scale`, and
+`dimensions` of each of the elements of your selection.
 
-Next, install TypeScript using the command:
+![figma-plugin-relative-change-screenshot](assets/screencapture.png)
 
-  npm install -g typescript
+## About Us
 
-Finally, in the directory of your plugin, get the latest type definitions for the plugin API by running:
-
-  npm install --save-dev @figma/plugin-typings
-
-If you are familiar with JavaScript, TypeScript will look very familiar. In fact, valid JavaScript code
-is already valid Typescript code.
-
-TypeScript adds type annotations to variables. This allows code editors such as Visual Studio Code
-to provide information about the Figma API while you are writing code, as well as help catch bugs
-you previously didn't notice.
-
-For more information, visit https://www.typescriptlang.org/
-
-Using TypeScript requires a compiler to convert TypeScript (code.ts) into JavaScript (code.js)
-for the browser to run.
-
-We recommend writing TypeScript code using Visual Studio code:
-
-1. Download Visual Studio Code if you haven't already: https://code.visualstudio.com/.
-2. Open this directory in Visual Studio Code.
-3. Compile TypeScript to JavaScript: Run the "Terminal > Run Build Task..." menu item,
-    then select "tsc: watch - tsconfig.json". You will have to do this again every time
-    you reopen Visual Studio Code.
-
-That's it! Visual Studio Code will regenerate the JavaScript file every time you save.
+[compose.us GmbH](https://compose.us) is a team of remote developers. We focus on community digitalization.
