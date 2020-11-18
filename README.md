@@ -1,4 +1,4 @@
-#figma-plugin-relative-changes
+# figma-plugin-relative-changes
 
 This plugin you can apply changes to a group of elements (figma nodes) relative to the selection.
 
