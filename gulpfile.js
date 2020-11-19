@@ -16,7 +16,7 @@ const typescript = () => {
         outFile: "ui.js",
       })
     )
-    .pipe(gulp.dest("src/frontend/"));
+    .pipe(gulp.dest(dest));
 };
 
 const inlineSource = () => {
@@ -44,7 +44,7 @@ const branding = () => {
 };
 
 const done = () => {
-  return gulp.src("src/frontend/ui.js").pipe(clean({ force: true }));
+  return gulp.src(`${dest}ui.js`).pipe(clean({ force: true }));
 };
 
 exports.default = gulp.series(
@@ -58,7 +58,7 @@ exports.default = gulp.series(
 
 exports.watch = () => {
   return gulp.watch(
-    ["./src/**/**", "!./src/frontend/ui.js"],
-    gulp.series(typescript, backend, inlineSource, manifest, branding, done)
+    ["./src/**/**"],
+    gulp.series(typescript, backend, inlineSource)
   );
 };
