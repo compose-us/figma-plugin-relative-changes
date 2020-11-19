@@ -10,7 +10,7 @@ const dest = pkg.destination ? pkg.destination : "build/";
 
 const typescript = () => {
   return gulp
-    .src("src/frontend/ui.script.ts")
+    .src("src/frontend/script.ts")
     .pipe(
       ts({
         outFile: "ui.js",
@@ -21,7 +21,7 @@ const typescript = () => {
 
 const inlineSource = () => {
   return gulp
-    .src("src/frontend/ui.template.html")
+    .src("src/frontend/template.html")
     .pipe(rename("ui.html"))
     .pipe(is())
     .pipe(gulp.dest(dest));
@@ -39,11 +39,12 @@ const manifest = () => {
   return gulp.src("src/backend/manifest.json").pipe(gulp.dest(dest));
 };
 
+const branding = () => {
+  return gulp.src("src/frontend/branding.png").pipe(gulp.dest(dest));
+};
+
 const done = () => {
-  return gulp
-    .src("src/frontend/ui.js")
-    .pipe(clean({ force: true }))
-    .pipe(gulp.dest(dest));
+  return gulp.src("src/frontend/ui.js").pipe(clean({ force: true }));
 };
 
 exports.default = gulp.series(
@@ -51,12 +52,13 @@ exports.default = gulp.series(
   backend,
   inlineSource,
   manifest,
+  branding,
   done
 );
 
 exports.watch = () => {
   return gulp.watch(
-    ["./src/frontend/**", "!./src/frontend/ui.js"],
-    gulp.series(typescript, inlineSource)
+    ["./src/**/**", "!./src/frontend/ui.js"],
+    gulp.series(typescript, backend, inlineSource, manifest, branding, done)
   );
 };
