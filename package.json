@@ -6,7 +6,7 @@
   "destination": "dist/",
   "scripts": {
     "start": "gulp watch",
-    "build": "tsc -p tsconfig.json",
+    "build": "gulp",
     "clean": "rm -rf dist/"
   },
   "author": "compose.us GmbH <hello+figma-plugins@compose.us>",
