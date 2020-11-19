@@ -1,16 +1,24 @@
 {
   "name": "figma-plugin-relative-changes",
   "version": "1.0.0",
-  "description": "Your Figma Plugin",
+  "description": "Figma Plugin - Relative Change",
   "main": "code.js",
+  "destination": "dist/",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "start": "gulp watch",
+    "build": "gulp",
     "clean": "rm -rf dist/"
   },
   "author": "compose.us GmbH <hello+figma-plugins@compose.us>",
   "license": "MIT",
   "devDependencies": {
     "@figma/plugin-typings": "^1.18.2",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-inline-source": "^4.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
     "typescript": "^4.0.5"
-  }
+  },
+  "dependencies": {}
 }

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>compose-us/figma-plugin-relative-changes</title>
+    <meta name="description" content="Figma Plugin - Relative Change" />
+    <meta name="author" content="compose.us GmbH" />
+    <link rel="stylesheet" href="styling.css" inline />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Relative Changes</h1>
+      <p>
+        You have to select one or more nodes to change their properties
+        relatively.<br />Put in "-5" into "x" to move all nodes 5 pixels to the
+        left.
+      </p>
+      <hr />
+      <form id="form">
+        <div class="form">
+          <fieldset>
+            <legend>Scale:</legend>
+            <label>
+              X:
+              <input type="number" name="x" id="x" value="0" />
+            </label>
+
+            <label>
+              Y:
+              <input type="number" id="y" value="0" />
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Dimensions:</legend>
+            <label>
+              Width:
+              <input type="number" id="width" value="0" />
+            </label>
+            <label>
+              Height:
+              <input type="number" id="height" value="0" />
+            </label>
+          </fieldset>
+        </div>
+        <fieldset>
+          <legend>Rotation:</legend>
+          <label>
+            <input type="number" id="rotation" value="0" min="-360" max="360" />
+            &deg;
+          </label>
+        </fieldset>
+        <div class="actions">
+          <input type="submit" value="Apply to Selected Nodes" />
+          <hr />
+          <a
+            href="https://compose.us"
+            class="branding"
+            role="link"
+            target="_blank"
+          >
+            Developed by <br />
+            <img src="branding.png" alt="Developed by compose.us GmbH" height="32" width="117" inline />
+          </a>
+        </div>
+      </form>
+    </div>
+    <script src="../../dist/ui.js" inline></script>
+  </body>
+</html>
