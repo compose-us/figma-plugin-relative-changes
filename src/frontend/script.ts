@@ -1,25 +1,24 @@
 const $form: HTMLElement = document.getElementById("form");
-const $x: string = document.getElementById("x").getAttribute("value");
-const $y: string = document.getElementById("y").getAttribute("value");
-const $width: string = document.getElementById("width").getAttribute("value");
-const $height: string = document.getElementById("height").getAttribute("value");
-const $rotation: string = document
-  .getElementById("rotation")
-  .getAttribute("value");
+const $x = document.getElementById("x") as HTMLInputElement;
+const $y = document.getElementById("y") as HTMLInputElement;
+const $width = document.getElementById("width") as HTMLInputElement;
+const $height = document.getElementById("height") as HTMLInputElement;
+const $rotation = document.getElementById("rotation") as HTMLInputElement;
 
 $form.onsubmit = (e: Event) => {
   e.preventDefault();
   e.stopPropagation();
+  const changes = {
+    x: parseFloat($x.value),
+    y: parseFloat($y.value),
+    width: parseFloat($width.value),
+    height: parseFloat($height.value),
+    rotation: parseFloat($rotation.value),
+  };
   parent.postMessage(
     {
       pluginMessage: {
-        changes: {
-          x: parseFloat($x),
-          y: parseFloat($y),
-          width: parseFloat($width),
-          height: parseFloat($height),
-          rotation: parseFloat($rotation),
-        },
+        changes,
       },
     },
     "*"
