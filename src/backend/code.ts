@@ -9,8 +9,6 @@ figma.ui.onmessage = (message) => {
   }
 
   processSelection(figma.currentPage.selection, data.changes);
-
-  figma.closePlugin();
 };
 
 function processPluginSize({ height, width }) {
