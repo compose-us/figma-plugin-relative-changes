@@ -9,7 +9,7 @@ This plugin you can apply changes to a group of elements (figma nodes) relative 
 After installing the plugin. Select a group of elements, launch the plugin and change the `rotation`, `scale`, and
 `dimensions` of each of the elements of your selection.
 
-![figma-plugin-relative-change-screenshot](assets/screencapture.png)
+![figma-plugin-relative-change-screenshot](assets/example.gif)
 
 ## About Us
 
