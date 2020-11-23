@@ -51,16 +51,33 @@ body {
 }
 
 .calculation-label {
-  display: grid;
-  grid-template-columns: 30px 1fr;
-  grid-gap: 5px;
+  /*display: grid;*/
+  /*grid-template-columns: 30px 1fr;*/
+  /*grid-gap: 5px;*/
+  /*width: 100%;*/
 }
 .calculation-label span {
-  text-align: right;
+  display: inline-block;
+  margin-left: -1px;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+  flex: 0 0 32px;
+  line-height: 32px;
+  font-size: 11px;
+  color: #b3b3b3;
+  fill: #b3b3b3;
+  grid-column-end: span 4;
+  pointer-events: none;
+  text-align: center;
 }
 
-.calculation-label:focus-within {
-  border: 1px solid #444;
+.calculation-label:not(:disabled):hover {
+  border: 1px solid rgba(0,0,0,.1);
+  cursor: ew-resize;
+  user-select: none;
+  align-items: center;
 }
 
 input.calculation {
