@@ -11,6 +11,10 @@ body {
   justify-content: center;
 }
 
+#credit-line {
+  min-height: 3em;
+}
+
 .actions {
   display: flex;
   justify-content: center;
