@@ -21,11 +21,11 @@ $form.onsubmit = (e: Event) => {
   e.preventDefault();
   e.stopPropagation();
   const changes = {
-    x: parseFloat($x.value),
-    y: parseFloat($y.value),
-    width: parseFloat($width.value),
-    height: parseFloat($height.value),
-    rotation: parseFloat($rotation.value),
+    x: $x.value,
+    y: $y.value,
+    width: $width.value,
+    height: $height.value,
+    rotation: $rotation.value,
   };
   parent.postMessage(
     {

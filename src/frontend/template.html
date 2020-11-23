@@ -18,49 +18,55 @@
       <hr />
       <form id="form">
         <div class="form">
-          <fieldset>
-            <legend>Scale:</legend>
-            <label>
-              X:
-              <input type="number" name="x" id="x" value="0" />
+          <div class="fields">
+            <label class="calculation-label">
+              <span>X:</span>
+              <input type="text" class="calculation" id="x" value="x+0" />
             </label>
 
-            <label>
-              Y:
-              <input type="number" id="y" value="0" />
+            <label class="calculation-label">
+              <span>Y:</span>
+              <input type="text" class="calculation" id="y" value="y+0" />
             </label>
-          </fieldset>
-          <fieldset>
-            <legend>Dimensions:</legend>
-            <label>
-              Width:
-              <input type="number" id="width" value="0" />
+            <label class="calculation-label">
+              <span>W:</span>
+              <input type="text" class="calculation" id="width" value="w+0" />
             </label>
-            <label>
-              Height:
-              <input type="number" id="height" value="0" />
+            <label class="calculation-label">
+              <span>H:</span>
+              <input type="text" class="calculation" id="height" value="h+0" />
             </label>
-          </fieldset>
-        </div>
-        <fieldset>
-          <legend>Rotation:</legend>
-          <label>
-            <input type="number" id="rotation" value="0" min="-360" max="360" />
-            &deg;
-          </label>
-        </fieldset>
-        <div class="actions">
-          <input type="submit" value="Apply to Selected Nodes" />
-          <hr />
-          <a
-            href="https://compose.us"
-            class="branding"
-            role="link"
-            target="_blank"
-          >
-            Developed by <br />
-            <img src="branding.png" alt="Developed by compose.us GmbH" height="32" width="117" inline />
-          </a>
+            <label class="calculation-label">
+              <span>R &deg;:</span>
+              <input
+                type="text"
+                class="calculation"
+                id="rotation"
+                value="r+0"
+                min="-360"
+                max="360"
+              />
+            </label>
+          </div>
+          <div class="actions">
+            <input type="submit" value="Apply to Selected Nodes" />
+            <hr />
+            <a
+              href="https://compose.us"
+              class="branding"
+              role="link"
+              target="_blank"
+            >
+              Developed by <br />
+              <img
+                src="branding.png"
+                alt="Developed by compose.us GmbH"
+                height="32"
+                width="117"
+                inline
+              />
+            </a>
+          </div>
         </div>
       </form>
     </div>

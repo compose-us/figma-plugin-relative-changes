@@ -39,18 +39,32 @@ body {
   text-decoration: none;
 }
 
-fieldset {
-  border: none;
-  flex-grow: 1;
-  text-align: center;
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
 }
 
-label,
-input {
-  margin-bottom: 10px;
+.form {
+  display: flex;
+  flex-direction: column;
 }
 
-input[type="number"] {
+.calculation-label {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  grid-gap: 5px;
+}
+.calculation-label span {
+  text-align: right;
+}
+
+.calculation-label:focus-within {
+  border: 1px solid #444;
+}
+
+input.calculation {
+  border: 0;
   max-width: 52px;
 }
 
