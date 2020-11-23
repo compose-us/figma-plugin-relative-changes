@@ -1,9 +1,10 @@
 // This plugin changes properties with "mixed" status relatively
-figma.showUI(__html__, { width: 310 });
+figma.showUI(__html__);
 
-figma.ui.onmessage = (message) => {
+figma.ui.onmessage = async (message) => {
   const data = message;
   if (data.type === "plugin-resize") {
+    await figma.loadFontAsync({ family: "Inter", style: "Regular" });
     return processPluginSize(data);
   }
 
@@ -73,7 +74,7 @@ function newValueFor(
     .replace(/\by\b/gi, `${y}`)
     .replace(/\br\b/gi, `${rotation}`);
   console.log("calculation", calculation);
-  if (/^[0-9.+\-*/()]+$/.test(calculation)) {
+  if (/^[0-9.+\-*/() ]+$/.test(calculation)) {
     const fn = new Function(`return ${calculation};`);
     const result = fn.apply(null);
     console.log("got a result!", result);
