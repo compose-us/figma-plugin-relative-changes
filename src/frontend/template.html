@@ -9,72 +9,80 @@
   </head>
   <body>
     <div class="container">
-      <h1>Relative Changes</h1>
-      <p>
-        You have to select one or more nodes to change their properties
-        relatively.<br />Put in "-5" into "x" to move all nodes 5 pixels to the
-        left.
-      </p>
-      <hr />
-      <form id="form" class="form">
-        <div class="fields">
-          <label class="calculation-label">
-            <span>X:</span>
-            <input type="text" class="calculation" id="x" value="x+0" />
-          </label>
+      <section class="form">
+        <form id="form">
+          <div class="fields">
+            <label class="calculation-label">
+              <span>X</span>
+              <input type="text" class="calculation" id="x" value="x+0" />
+            </label>
 
-          <label class="calculation-label">
-            <span>Y:</span>
-            <input type="text" class="calculation" id="y" value="y+0" />
-          </label>
-        </div>
+            <label class="calculation-label">
+              <span>Y</span>
+              <input type="text" class="calculation" id="y" value="y+0" />
+            </label>
+          </div>
 
-        <div class="fields">
-          <label class="calculation-label">
-            <span>W:</span>
-            <input type="text" class="calculation" id="width" value="w+0" />
-          </label>
+          <div class="fields">
+            <label class="calculation-label">
+              <span>W</span>
+              <input type="text" class="calculation" id="width" value="w+0" />
+            </label>
 
-          <label class="calculation-label">
-            <span>H:</span>
-            <input type="text" class="calculation" id="height" value="h+0" />
-          </label>
-        </div>
+            <label class="calculation-label">
+              <span>H</span>
+              <input type="text" class="calculation" id="height" value="h+0" />
+            </label>
+          </div>
 
-        <div class="fields">
-          <label class="calculation-label">
-            <span>R &deg;:</span>
-            <input
-              type="text"
-              class="calculation"
-              id="rotation"
-              value="r+0"
-              min="-360"
-              max="360"
-            />
-          </label>
-        </div>
+          <div class="fields">
+            <label class="calculation-label">
+              <span>R&deg;</span>
+              <input
+                type="text"
+                class="calculation"
+                id="rotation"
+                value="r+0"
+                min="-360"
+                max="360"
+              />
+            </label>
+          </div>
 
-        <div class="actions">
-          <input type="submit" value="Apply to Selected Nodes" />
-          <hr />
-          <a
-            href="https://compose.us"
-            class="branding"
-            role="link"
-            target="_blank"
-          >
-            Developed by <br />
-            <img
-              src="branding.png"
-              alt="Developed by compose.us GmbH"
-              height="32"
-              width="117"
-              inline
-            />
-          </a>
-        </div>
-      </form>
+          <div class="actions">
+            <button type="submit" class="action-button">
+              <div class="action-button-content">Apply to Selected Nodes</div>
+            </button>
+          </div>
+        </form>
+      </section>
+      <section class="helper">
+        <p>
+          Apply relative changes to your node's properties. You can also use the
+          node's current property as variables.
+        </p>
+        <p>
+          For example, move the x position of your elements as a multiple of the
+          y position by putting in "x+2*y".
+        </p>
+      </section>
+      <section class="credits">
+        <a
+          href="https://compose.us"
+          class="branding"
+          role="link"
+          target="_blank"
+        >
+          Developed by <br />
+          <img
+            src="branding.png"
+            alt="Developed by compose.us GmbH"
+            height="32"
+            width="117"
+            inline
+          />
+        </a>
+      </section>
     </div>
     <script src="../../dist/ui.js" inline></script>
   </body>
